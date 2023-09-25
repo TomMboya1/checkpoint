@@ -1,9 +1,7 @@
 package controller;
 
 
-import jakarta.persistence.Id;
 import org.springframework.web.bind.annotation.*;
-import product.product;
 import dao.productRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -13,6 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class ProductController {
     private final product_service product_service;
     @Autowired
+    public ProductController(Product_service productService) {
+        this.product_service = productService;
+    }
 
     private productRepository ProductRepository;
 
